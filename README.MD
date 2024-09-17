@@ -3,7 +3,7 @@
 ## Tests compilation example
 
 ```console
-gcc -I include -o test/YourTest test/YourTest.cpp
+gcc -I include -o test/TestName test/TestName.cpp
 ```
 
 ## Data Structures To-Do
