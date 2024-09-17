@@ -1,6 +1,6 @@
 # C++ Data Structures and Algorithms
 
 ## Data Structures To-Do
-- [] Array
+- [O] Array
 - [X] Allocator
 - [X] Dynamic Array
