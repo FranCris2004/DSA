@@ -11,23 +11,28 @@ namespace dsa
     template <typename T, std::size_t S>
     class Array
     {
+    public:
+        typedef std::size_t size_type;
+        typedef T value_type;
+        typedef value_type &reference;
+
     private:
-        T m_data[S];
+        value_type m_data[S];
 
     public:
         constexpr Array() : m_data{0} {}
 
-        static constexpr std::size_t size()
+        static constexpr size_type size()
         {
             return S;
         }
 
-        constexpr T &operator[](std::size_t index)
+        constexpr reference operator[](size_type index)
         {
             return m_data[index];
         }
 
-        constexpr T &at(std::size_t index)
+        constexpr reference at(size_type index)
         {
             if (index >= this->size())
                 throw new std::out_of_range("Out of range index");
