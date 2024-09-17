@@ -2,7 +2,6 @@
 
 #include <cstddef>
 #include <stdexcept>
-#include <cstdarg>
 
 namespace dsa
 {

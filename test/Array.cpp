@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include <../include/dsa/DataStructure/Array.hpp>
+#include <../include/DSA/DataStructure/Array.hpp>
 
 int main()
 {
