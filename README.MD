@@ -2,7 +2,7 @@
 
 ## Tests compilation example
 
-```sh
+```console
 gcc -I include -o test/TestName test/TestName.cpp
 ```
 
