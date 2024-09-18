@@ -1,10 +1,13 @@
 
 #include <iostream>
-#include <../include/dsa/DataStructure/Array.hpp>
+#include <dsa/DataStructure/Array.hpp>
 
 int main()
 {
-    dsa::Array<int, 8> array;
+    using namespace std;
+    using namespace dsa;
+
+    Array<int, 8> array;
 
     array[0] = 1; // ok
     array.at(1) = 1; // ok
@@ -19,7 +22,7 @@ int main()
     //    array[i] = i * 2;
 
     for (size_t i = 0; i < array.size(); i++)
-        std::cout << i << "\n";
+        cout << i << "\n";
 
     return 0;
 }

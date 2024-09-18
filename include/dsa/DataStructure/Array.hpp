@@ -8,23 +8,24 @@ namespace dsa
     /***
      * @brief Fixed size array
      */
-    template <typename T, std::size_t S>
+    template <typename _Tp, std::size_t _Sz>
     class Array
     {
     public:
+        typedef Array<_Tp, _Sz> type;
         typedef std::size_t size_type;
-        typedef T value_type;
+        typedef _Tp value_type;
         typedef value_type &reference;
 
     private:
-        value_type m_data[S];
+        value_type m_data[_Sz];
 
     public:
         constexpr Array() : m_data{0} {}
 
         static constexpr size_type size()
         {
-            return S;
+            return _Sz;
         }
 
         constexpr reference operator[](size_type index)
