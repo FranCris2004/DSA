@@ -5,14 +5,14 @@
 
 namespace dsa
 {
-    /***
-     * @brief Fixed size array
+    /*
+     * Fixed size array
+     * **0 Sized array not implemented, use it at your own risk**
      */
     template <typename _Tp, std::size_t _Sz>
     class Array
     {
     public:
-        typedef Array<_Tp, _Sz> type;
         typedef std::size_t size_type;
         typedef _Tp value_type;
         typedef value_type &reference;
@@ -21,8 +21,6 @@ namespace dsa
         value_type m_data[_Sz];
 
     public:
-        constexpr Array() : m_data{0} {}
-
         static constexpr size_type size()
         {
             return _Sz;
