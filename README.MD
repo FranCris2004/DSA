@@ -8,7 +8,7 @@ gcc -I include -o test/TestName test/TestName.cpp
 
 ## Data Structures To-Do
 - [X] Array
-- [X] Allocator
+- [ ] Allocator
 - [ ] Dynamic Array
 - [ ] Vector
 - [ ] Simply Linked List
