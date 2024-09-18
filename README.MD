@@ -3,10 +3,15 @@
 ## Tests compilation example
 
 ```console
-gcc -I include -o test/YourTest test/YourTest.cpp
+gcc -I include -o test/TestName test/TestName.cpp
 ```
 
 ## Data Structures To-Do
 - [X] Array
-- [ ] Allocator
+- [X] Allocator
 - [ ] Dynamic Array
+- [ ] Vector
+- [ ] Simply Linked List
+- [ ] Doubly Linked List
+- [ ] Stack
+- [ ] Queue
