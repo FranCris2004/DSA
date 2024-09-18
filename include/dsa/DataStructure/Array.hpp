@@ -5,9 +5,9 @@
 
 namespace dsa
 {
-    /*
-     * Fixed size array
-     * **0 Sized array not implemented, use it at your own risk**
+    /* Fixed size array
+     * 
+     * zero sized array not implemented, use it at your own risk
      */
     template <typename _Tp, std::size_t _Sz>
     class Array
