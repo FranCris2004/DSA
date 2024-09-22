@@ -2,7 +2,6 @@
 
 #include <cstddef>
 #include <stdexcept>
-#include <array>
 
 namespace dsa
 {
