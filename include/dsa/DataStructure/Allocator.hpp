@@ -7,23 +7,20 @@ namespace dsa
 {
     /**
      * @brief Allocator virtual class.
-     * Dynamically (not necessarily automatic) allocate/deallocate memory to be used by dynamic data structures.
-     *
-     * @warning It is intended to be used by a dynamic data structure, not directly.
+     * Dynamically allocate/deallocate memory to be used by dynamic data structures.
      */
-    template <typename _Tp>
+    template <typename Tp>
     class Allocator
     {
     public:
         typedef std::size_t size_type;
-        typedef _Tp value_type;
+        typedef Tp value_type;
 
         /**
-         * @brief Allocate new aligned memory
-         * @param n number of elements to be allocated
-         * @param a alignment bytes
+         * @brief Allocate new memory.
+         * @param n Number of elements to be allocated.
          */
-        virtual value_type *allocate(size_type n, size_type a) = 0;
+        virtual value_type *allocate(size_type n) = 0;
 
         /**
          * @brief Deallocate previously allocated memory.
@@ -33,5 +30,27 @@ namespace dsa
          * memory allocated by an allocator of another class or with another type of value.
          */
         virtual void deallocate(value_type *p) = 0;
+    };
+
+    /**
+     * @brief Default allocator for the library.
+     * Uses the new and delete operators in order to allocate and deallocate memory.
+     */
+    template <typename Tp>
+    class DefaultAllocator : public Allocator<Tp>
+    {
+    public:
+        typedef std::size_t size_type;
+        typedef Tp value_type;
+
+        virtual value_type *allocate(size_type n) override
+        {
+            return (value_type *)(::operator new(n * sizeof(value_type)));
+        }
+
+        virtual void deallocate(value_type *p) override
+        {
+            ::operator delete(p);
+        }
     };
 } // namespace dsa
