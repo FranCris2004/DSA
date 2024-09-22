@@ -22,7 +22,7 @@ gcc -I include -o test/TestName test/TestName.cpp
 
 ### Allocators
 - [X] Allocator Virtual Class
-- [ ] Allocator (new/delete and malloc/free based)
+- [X] Default Allocator (new/delete based)
 - [ ] Stack Allocator
 - [ ] Block Allocator (pool)
 - [ ] Scratch Allocator
