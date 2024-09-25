@@ -16,18 +16,33 @@ namespace dsa
     public:
         typedef std::size_t size_type;
         typedef Tp value_type;
+        typedef value_type &reference;
+        typedef value_type const &const_reference;
 
         static constexpr size_type size()
         {
             return Sz;
         }
 
-        inline value_type &operator[](size_type index)
+        inline reference operator[](size_type index)
         {
             return m_data[index];
         }
 
-        inline value_type &at(size_type index)
+        inline const_reference operator[](size_type index) const
+        {
+            return m_data[index];
+        }
+
+        inline reference at(size_type index)
+        {
+            if (index >= this->size())
+                throw new std::out_of_range("Out of range index");
+
+            return m_data[index];
+        }
+
+        inline const_reference at(size_type index) const
         {
             if (index >= this->size())
                 throw new std::out_of_range("Out of range index");
