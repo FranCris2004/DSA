@@ -67,11 +67,6 @@ namespace dsa
             return Sz;
         }
 
-        constexpr size_type max_size() noexcept
-        {
-            return Sz;
-        }
-
         constexpr size_type empty() noexcept
         {
             return (size() == 0);
